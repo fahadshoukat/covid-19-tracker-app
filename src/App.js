@@ -16,8 +16,7 @@ const App = () => {
   },[])
 
   return (
-    <div>
-      <h1>Covid-19 Tracker App</h1>
+    <div className='container'>
       <Cards data={data} />
       <CountryPicker />
       <Chart />
