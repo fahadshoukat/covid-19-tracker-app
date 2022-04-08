@@ -1,6 +1,7 @@
 import React from 'react'
 
-const Cards = () => {
+const Cards = ({data:{confirmed, recovered, deaths, lastUpdate}}) => {
+  console.log({confirmed, recovered, deaths, lastUpdate});
   return (
     <div>Cards</div>
   )

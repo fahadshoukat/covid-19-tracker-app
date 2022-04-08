@@ -1,13 +1,16 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import {Cards, Chart, CountryPicker} from './components';
 import {fetchData} from './components/api'
 
 const App = () => {
 
+  const [data, setData] = useState({});
+
   useEffect(() => {
     async function getData(){
+
       const data = await fetchData();
-      console.log(data);
+      setData(data);
     }
     getData();
   },[])
@@ -15,7 +18,7 @@ const App = () => {
   return (
     <div>
       <h1>Covid-19 Tracker App</h1>
-      <Cards />
+      <Cards data={data} />
       <CountryPicker />
       <Chart />
     </div>
